@@ -10,23 +10,21 @@
 <title>NeoX Studio | Jogos no Roblox</title>
 <meta name="description" content="A NeoX faz jogos no Roblox para você entrar e se divertir. Conheça Anime Paradise, Anime Crash e FREE FIRE MAX.">
 <meta name="author" content="NeoX Studio">
-<link rel="canonical" href="https://neoxstudio.com.br/">
-<link rel="alternate" hreflang="pt-BR" href="https://neoxstudio.com.br/">
-<link rel="alternate" hreflang="x-default" href="https://neoxstudio.com.br/">
+<link rel="canonical" href="https://eosein.github.io/NeoX-Inc/">
+<link rel="alternate" hreflang="pt-BR" href="https://eosein.github.io/NeoX-Inc/">
+<link rel="alternate" hreflang="x-default" href="https://eosein.github.io/NeoX-Inc/">
 
-<!-- SITE_URL: troque https://neoxstudio.com.br pelo domínio real em index.html, robots.txt e sitemap.xml -->
-<!-- OG: a imagem abaixo precisa ter 1200x630 de verdade (assets/og-cover.png). -->
+<!-- Site publicado em https://eosein.github.io/NeoX-Inc/ (se trocar de domínio, troque nas tags canonical, og: e twitter: abaixo). -->
+<!-- OG: salve a imagem de pré-visualização do link em assets/og-cover.png (ideal 1200x630). O endereço PRECISA ser absoluto. -->
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="NeoX Studio">
-<meta property="og:url" content="https://neoxstudio.com.br/">
+<meta property="og:url" content="https://eosein.github.io/NeoX-Inc/">
 <meta property="og:title" content="NeoX Studio | Jogos no Roblox">
 <meta property="og:description" content="Jogos no Roblox feitos para jogar e voltar.">
-<meta property="og:image" content="https://neoxstudio.com.br/assets/og-cover.png">
-<meta property="og:image:secure_url" content="https://neoxstudio.com.br/assets/og-cover.png">
+<meta property="og:image" content="https://eosein.github.io/NeoX-Inc/assets/og-cover.png">
+<meta property="og:image:secure_url" content="https://eosein.github.io/NeoX-Inc/assets/og-cover.png">
 <meta property="og:image:type" content="image/png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="NeoX Studio: jogos no Roblox">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:locale:alternate" content="en_US">
@@ -34,16 +32,15 @@
 <meta name="twitter:site" content="@NeoX351459">
 <meta name="twitter:title" content="NeoX Studio | Jogos no Roblox">
 <meta name="twitter:description" content="Jogos no Roblox feitos para jogar e voltar.">
-<meta name="twitter:image" content="https://neoxstudio.com.br/assets/og-cover.png">
+<meta name="twitter:image" content="https://eosein.github.io/NeoX-Inc/assets/og-cover.png">
 
 <!-- Favicons / PWA. Coloque os arquivos em assets/ (o logo atual serve de fallback). -->
 <link rel="icon" type="image/png" sizes="any" href="assets/neox-logo.png">
-<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="assets/neox-logo.png">
 
 <!-- Segurança: em produção o ideal é enviar a MESMA política como cabeçalho HTTP no servidor.
      'unsafe-inline' é necessário porque este arquivo tem CSS/JS inline. -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self' https://cdn.discordapp.com; connect-src 'self' https://apis.roproxy.com https://games.roproxy.com https://api.allorigins.win https://r.jina.ai https://formsubmit.co; form-action 'self' https://formsubmit.co; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self' https://cdn.discordapp.com; connect-src 'self' https://apis.roproxy.com https://games.roproxy.com https://api.allorigins.win https://r.jina.ai https://formsubmit.co https://abacus.jasoncameron.dev; form-action 'self' https://formsubmit.co; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 
 <script type="application/ld+json">
@@ -52,8 +49,8 @@
   "@type": "Organization",
   "name": "NeoX Studio",
   "alternateName": "Neo X Inc",
-  "url": "https://neoxstudio.com.br/",
-  "logo": "https://neoxstudio.com.br/assets/neox-logo.png",
+  "url": "https://eosein.github.io/NeoX-Inc/",
+  "logo": "https://eosein.github.io/NeoX-Inc/assets/neox-logo.png",
   "description": "Estúdio de jogos no Roblox: Anime Paradise, Anime Crash e FREE FIRE MAX.",
   "sameAs": [
     "https://www.roblox.com/communities/35039927/Neo-X-Inc",
@@ -182,7 +179,8 @@ ul,ol{ margin:0; padding:0; list-style:none; }
 
 .card-hover{ transition:transform .45s var(--ease), border-color .35s ease, box-shadow .35s ease; }
 @media (hover:hover){
-  .card-hover:hover{ transform:translateY(-6px); border-color:rgba(0,229,255,.3); box-shadow:var(--shadow), var(--glow); }
+  /* Sem brilho/sombra ciano no hover: só sobe e muda a borda */
+  .card-hover:hover{ transform:translateY(-6px); border-color:rgba(0,229,255,.3); }
 }
 
 /* ---------- Botões ---------- */
@@ -738,10 +736,10 @@ body{
 }
 
 @media (hover:hover){
+  /* Sombra ciano do hover removida */
   .card-hover:hover{
     transform:translateY(-4px);
     border-color:rgba(0,229,255,.26);
-    box-shadow:0 24px 46px -30px rgba(0,229,255,.4);
   }
 }
 .eyebrow{
@@ -973,12 +971,8 @@ body{
 .card-hover.card-tilt:hover{
   transform:perspective(1100px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(var(--lift,0px));
 }
-.card-tilt::after{
-  content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none;
-  background:radial-gradient(340px circle at var(--mx,50%) var(--my,50%),rgba(0,229,255,.09),transparent 62%);
-  opacity:0; transition:opacity .4s ease; z-index:1;
-}
-.card-tilt:hover::after{ opacity:1; }
+/* Brilho ciano que acompanhava o cursor nos cards: removido */
+.card-tilt::after{ display:none; }
 
 /* Os cards com data-reveal tinham "transform:none" ganhando do tilt/hover.
    Depois que o reveal termina (.is-settled), devolvemos o controle do transform
@@ -1252,13 +1246,6 @@ html{ scroll-behavior:auto; }
   from{ transform:scaleX(0); }
   to{ transform:scaleX(1); }
 }
-#games.is-arriving .game-card{
-  animation:card-glow 1.3s var(--ease) both;
-}
-@keyframes card-glow{
-  0%,100%{ box-shadow:none; }
-  45%{ box-shadow:0 0 34px rgba(0,229,255,.13); }
-}
 /* Footer */
 .site-footer{ position:relative; }
 .site-footer::before{
@@ -1393,18 +1380,9 @@ html.is-traveling #scroll-progress{
    ========================================================= */
 a,button{ touch-action:manipulation; }
 
-/* ---- Spotlight que acompanha o cursor dentro dos containers ---- */
+/* ---- Spotlight ciano que acompanhava o cursor: removido ---- */
 .spot{ position:relative; }
-.spot::after{
-  content:""; position:absolute; inset:0; width:auto; height:auto;
-  border-radius:inherit; pointer-events:none; z-index:1;
-  background:radial-gradient(320px circle at var(--mx,50%) var(--my,50%), rgba(0,229,255,.085), transparent 62%);
-  opacity:0; transition:opacity .45s ease;
-}
-.about-panel.spot::after{ display:block; right:0; bottom:0; }
-@media (hover:hover){
-  .spot:hover::after{ opacity:1; }
-}
+.spot::after{ display:none; }
 
 /* ---- Containers em grupo (stagger): o hover agora funciona de verdade ----
    Antes o "transform:none" do reveal vencia o :hover, então comunidade e
@@ -1453,6 +1431,33 @@ a,button{ touch-action:manipulation; }
   .footer-links a{ padding:.55rem .1rem; }
   .chip-link{ min-height:44px; }
   .mobile-nav a{ min-height:48px; }
+}
+
+/* ---- Jogos: mostra a imagem inteira (sem cortar) ---- */
+.game-media{ aspect-ratio:auto; background:none; }
+.game-media img{
+  width:100%; height:auto; object-fit:contain; display:block;
+  animation:none !important; transform:none !important;
+}
+.game-media::after{ display:none; }
+
+/* ---- Contador de visualizações (canto inferior esquerdo) ---- */
+.view-counter{
+  position:fixed; left:18px; bottom:calc(18px + env(safe-area-inset-bottom,0px));
+  z-index:80; display:inline-flex; align-items:center; gap:.5rem;
+  height:44px; padding:0 .95rem; border-radius:999px;
+  background:rgba(10,14,19,.92); border:1px solid rgba(255,255,255,.12);
+  color:#e6eef5; font-size:.8rem; font-weight:800; font-variant-numeric:tabular-nums;
+  -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);
+  opacity:0; visibility:hidden; transform:translateY(10px); pointer-events:none;
+  transition:opacity .45s ease, transform .5s var(--ease), visibility .45s, border-color .25s ease;
+}
+.view-counter.is-visible{ opacity:1; visibility:visible; transform:none; pointer-events:auto; }
+.view-counter:hover{ border-color:rgba(0,229,255,.35); }
+.view-counter .icon{ font-size:1.1rem; color:var(--cyan); }
+@media (max-width:560px){
+  .view-counter{ left:14px; bottom:calc(14px + env(safe-area-inset-bottom,0px)); height:42px; padding:0 .8rem; }
+  .view-counter .pulse-dot{ display:none; }
 }
 </style>
 </head>
@@ -2188,6 +2193,11 @@ window.NEOX_CONFIG = {
   </div>
 </footer>
 
+<div id="view-counter" class="view-counter" role="status" aria-label="Pessoas que já visitaram o site" title="Pessoas que já visitaram o site" data-i18n-aria="views_label" data-i18n-title="views_label">
+  <svg class="icon" aria-hidden="true"><use href="#i-eye"/></svg>
+  <span id="view-count">—</span>
+  <span class="pulse-dot" aria-hidden="true"></span>
+</div>
 <div id="nav-toast" class="nav-toast" aria-live="polite" aria-hidden="true"><span class="nav-toast-dot" aria-hidden="true"></span><span id="nav-toast-text">Indo…</span></div>
 <button type="button" id="to-top" class="to-top" aria-label="Voltar ao topo" data-i18n-aria="to_top" aria-hidden="true" tabindex="-1">
   <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg>
@@ -2336,6 +2346,7 @@ window.NEOX_CONFIG = {
       ph_name: "Seu nome", ph_email: 'voce@email.com', ph_roblox: "Seu usuário no Roblox", ph_msg: "Conta o que você precisa...",
       aria_menu_open: 'Abrir menu', aria_menu_close: 'Fechar menu',
       to_top: 'Voltar ao topo', scroll_hint: 'Ir para a seção Sobre',
+      views_label: 'Pessoas que já visitaram o site',
       going_to: (name) => (name ? `Indo para ${name}…` : 'Indo…'),
       back_to_top: 'Voltando ao topo…',
       title: 'NeoX Studio | Jogos no Roblox'
@@ -2410,6 +2421,7 @@ window.NEOX_CONFIG = {
       ph_name: "Your name", ph_email: 'you@email.com', ph_roblox: "Your Roblox username", ph_msg: "Tell us what you need...",
       aria_menu_open: 'Open menu', aria_menu_close: 'Close menu',
       to_top: 'Back to top', scroll_hint: 'Go to the About section',
+      views_label: 'People who have visited the site',
       going_to: (name) => (name ? `Heading to ${name}…` : 'On the way…'),
       back_to_top: 'Back to top…',
       title: 'NeoX Studio | Games on Roblox'
@@ -2437,6 +2449,10 @@ window.NEOX_CONFIG = {
     $$('[data-i18n-aria]').forEach((el) => {
       const value = t[el.dataset.i18nAria];
       if (typeof value === 'string') el.setAttribute('aria-label', value);
+    });
+    $$('[data-i18n-title]').forEach((el) => {
+      const value = t[el.dataset.i18nTitle];
+      if (typeof value === 'string') el.setAttribute('title', value);
     });
     $$('[data-i18n-placeholder]').forEach((el) => {
       const value = t[el.dataset.i18nPlaceholder];
@@ -3723,7 +3739,8 @@ window.NEOX_CONFIG = {
 
   /* ---------------- Spotlight nos demais containers ----------------
      Um único listener: o brilho acompanha o cursor dentro de stats, "Sobre",
-     comunidade, features e cards da equipe. Só em dispositivos com mouse. */
+     comunidade, features e cards da equipe. Só em dispositivos com mouse.
+     (O brilho ciano está desativado no CSS; o código fica caso queira reativar.) */
   (() => {
     if (!window.matchMedia('(hover:hover) and (pointer:fine)').matches) return;
     $$('.stat-card, .about-panel, .about-copy, .community-card, .feature, .team-card')
@@ -3905,6 +3922,67 @@ window.NEOX_CONFIG = {
     }
     window.setTimeout(maybeFinish, maxTime);
   }
+
+  /* ---------------- Contador de visualizações (tempo real) ----------------
+     Usa o serviço gratuito Abacus (abacus.jasoncameron.dev). Cada navegador conta
+     UMA vez (marcado no localStorage); depois só lê o total a cada 30 s.
+     Se o serviço estiver fora do ar, o contador simplesmente fica escondido. */
+  (() => {
+    const box = $('#view-counter');
+    const out = $('#view-count');
+    if (!box || !out) return;
+    const BASE = 'https://abacus.jasoncameron.dev';
+    const NAMESPACE = 'neoxstudio-eosein-github-io';
+    const KEY = 'site-views';
+    const SEEN = 'neox-view-counted-v1';
+    let timer = null;
+
+    async function call(action) {
+      const controller = new AbortController();
+      const t = setTimeout(() => controller.abort(), 9000);
+      try {
+        const response = await fetch(`${BASE}/${action}/${NAMESPACE}/${KEY}`, {
+          signal: controller.signal,
+          cache: 'no-store'
+        });
+        if (!response.ok) throw new Error('HTTP ' + response.status);
+        const data = await response.json();
+        const value = num(data && (data.value ?? data.count));
+        if (value === null) throw new Error('resposta inesperada');
+        return value;
+      } finally {
+        clearTimeout(t);
+      }
+    }
+    function show(value) {
+      setValue(out, value, false);
+      box.classList.add('is-visible');
+    }
+    async function refresh() {
+      clearTimeout(timer);
+      if (!document.hidden) {
+        try { show(await call('get')); }
+        catch (error) { console.warn('[NeoX] Contador indisponível:', error.message || error); }
+      }
+      timer = setTimeout(refresh, 30000);
+    }
+    async function start() {
+      try {
+        if (!store.get(SEEN)) {
+          const value = await call('hit');
+          store.set(SEEN, true);
+          show(value);
+        } else {
+          show(await call('get'));
+        }
+      } catch (error) {
+        console.warn('[NeoX] Contador indisponível:', error.message || error);
+      }
+      timer = setTimeout(refresh, 30000);
+    }
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) refresh(); });
+    start();
+  })();
 
   /* ---------------- Idioma ---------------- */
   const langBtn = $('#lang-btn');
