@@ -7,7 +7,7 @@
 
 <!-- Segurança: em produção o ideal é enviar a MESMA política como cabeçalho HTTP no servidor.
      'unsafe-inline' é necessário porque este arquivo tem CSS/JS inline. -->
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-src 'none'; worker-src 'none'; manifest-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self' https://cdn.discordapp.com; connect-src 'self' https://apis.roproxy.com https://games.roproxy.com https://api.allorigins.win https://r.jina.ai https://formsubmit.co; form-action 'self' https://formsubmit.co; upgrade-insecure-requests">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-src 'none'; worker-src 'none'; manifest-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self' https://apis.roproxy.com https://games.roproxy.com https://api.allorigins.win https://r.jina.ai https://formsubmit.co; form-action 'self' https://formsubmit.co; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 
 <!-- Anti-clickjacking: se o site for aberto dentro de um iframe de outro domínio, ele some e sai do quadro. -->
@@ -78,7 +78,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="assets/neox-logo.png" fetchpriority="high">
 <link rel="preconnect" href="https://games.roproxy.com" crossorigin>
-<link rel="preconnect" href="https://cdn.discordapp.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
@@ -119,6 +118,7 @@ ul,ol{ margin:0; padding:0; list-style:none; }
 :focus-visible{ outline:2px solid var(--accent); outline-offset:3px; border-radius:6px; }
 [hidden]{ display:none !important; }
 a,button{ touch-action:manipulation; }
+main:focus{ outline:none; }
 
 .sr-only{ position:absolute!important; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0; }
 .skip-link{ position:fixed; top:10px; left:10px; z-index:200; padding:.7rem 1rem; border-radius:12px; background:#fff; color:#000; font-weight:700; transform:translateY(-160%); transition:transform .2s ease; }
@@ -577,6 +577,61 @@ html.hero-off .ambient span,html.hero-off .hero-logo-wrap::before,html.hero-off 
   .to-top.is-visible:hover{ transform:translateY(-3px); }
 }
 
+/* ---------- ANIMAÇÕES NOVAS (suaves) ---------- */
+/* Entrada do header */
+.site-header{ animation:hdr-in .9s var(--ease) .1s backwards; }
+html.is-loading .site-header{ animation-play-state:paused; }
+@keyframes hdr-in{ from{ opacity:0; transform:translateY(-100%); } }
+
+/* Brilho que segue o mouse nos cards */
+.panel{ --mx:50%; --my:50%; --sp:0;
+  background:
+    radial-gradient(320px circle at var(--mx) var(--my), rgba(111,220,236,calc(var(--sp) * .09)), transparent 65%),
+    linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.01)); }
+.panel.is-spot{ --sp:1; }
+
+/* Botões magnéticos + brilho suave no botão principal do hero */
+.btn{ transition:transform .3s var(--ease), translate .35s var(--ease), background-color .25s ease, color .25s ease, border-color .25s ease, box-shadow .3s ease; }
+.hero-cta .btn-primary{ animation:glow-soft 4.5s ease-in-out infinite; }
+@keyframes glow-soft{
+  0%,100%{ box-shadow:0 10px 30px -16px rgba(255,255,255,.35); }
+  50%{ box-shadow:0 14px 40px -12px rgba(111,220,236,.45); }
+}
+
+/* Imagens saem do desfoque ao aparecer */
+.js .game-media img{ filter:blur(10px); scale:1.08; transition:filter 1.1s var(--ease), scale 1.3s var(--ease), transform .9s var(--ease); }
+.js .game-card.is-in .game-media img{ filter:none; scale:1; }
+.js .media-frame img{ filter:blur(8px); scale:1.05; transition:filter 1s var(--ease), scale 1.2s var(--ease), transform .9s var(--ease); }
+.js .stagger.is-in .media-frame img{ filter:none; scale:1; }
+
+/* Parallax leve, ícones flutuando e hover nas estatísticas */
+.ambient{ translate:0 calc(var(--py,0) * 1px); }
+.community-icon{ animation:float-t 7s ease-in-out infinite; }
+.community-card:nth-child(2) .community-icon{ animation-delay:-3s; }
+@keyframes float-t{ 0%,100%{ translate:0 0; } 50%{ translate:0 -5px; } }
+.stat-card{ transition:background-color .3s ease; }
+@media (hover:hover){ .stat-card:hover{ background:rgba(255,255,255,.025); } }
+
+/* Ícone do menu gira ao abrir/fechar */
+.icon-btn.is-spin .icon{ animation:spin-in .45s var(--ease); }
+@keyframes spin-in{ from{ transform:rotate(-90deg) scale(.6); opacity:0; } }
+
+/* Itens do perfil entram em sequência */
+.view-page.is-enter .dp-duties li,
+.view-page.is-enter .dp-person{ animation:fade-up .7s var(--ease) backwards; }
+.view-page.is-enter .dp-duties li:nth-child(1){ animation-delay:.45s; }
+.view-page.is-enter .dp-duties li:nth-child(2){ animation-delay:.52s; }
+.view-page.is-enter .dp-duties li:nth-child(3){ animation-delay:.59s; }
+.view-page.is-enter .dp-duties li:nth-child(4){ animation-delay:.66s; }
+.view-page.is-enter .dp-person:nth-child(1){ animation-delay:.5s; }
+.view-page.is-enter .dp-person:nth-child(2){ animation-delay:.55s; }
+.view-page.is-enter .dp-person:nth-child(3){ animation-delay:.6s; }
+.view-page.is-enter .dp-person:nth-child(4){ animation-delay:.65s; }
+.view-page.is-enter .dp-person:nth-child(5){ animation-delay:.7s; }
+.view-page.is-enter .dp-person:nth-child(6){ animation-delay:.75s; }
+.view-page.is-enter .dp-person:nth-child(7){ animation-delay:.8s; }
+.view-page.is-enter .dp-person:nth-child(8){ animation-delay:.85s; }
+
 /* ---------- Responsivo ---------- */
 @media (min-width:560px){
   .feature-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); }
@@ -676,7 +731,7 @@ html.hero-off .ambient span,html.hero-off .hero-logo-wrap::before,html.hero-off 
   <symbol id="i-arrow-up" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></g></symbol>
 </svg>
 
-<a href="#home" class="skip-link" data-i18n="skip">Pular para o conteúdo</a>
+<a href="#main" class="skip-link" data-i18n="skip">Pular para o conteúdo</a>
 
 <!-- ================= HEADER ================= -->
 <header class="site-header" id="site-header">
@@ -708,21 +763,22 @@ html.hero-off .ambient span,html.hero-off .hero-logo-wrap::before,html.hero-off 
       </button>
     </div>
   </div>
-
-  <nav id="mobile-menu" class="mobile-nav" aria-label="Menu mobile" aria-hidden="true" inert>
-    <a href="#home" data-i18n="nav_home">Home</a>
-    <a href="#about" data-i18n="nav_about">Sobre</a>
-    <a href="#games" data-i18n="nav_games">Jogos</a>
-    <a href="#media" data-i18n="nav_media">Trailers</a>
-    <a href="#team" data-i18n="nav_team">Equipe</a>
-    <a href="#contact" data-i18n="nav_contact">Contato</a>
-    <a href="https://discord.gg/4ACnyKR8HQ" target="_blank" rel="noopener noreferrer" class="mobile-cta">
-      <svg class="icon" aria-hidden="true"><use href="#i-discord"/></svg> Discord
-    </a>
-  </nav>
 </header>
 
-<main id="main">
+<!-- Menu mobile: fora do header para o position:fixed não ficar preso ao backdrop-filter -->
+<nav id="mobile-menu" class="mobile-nav" aria-label="Menu mobile" aria-hidden="true" inert>
+  <a href="#home" data-i18n="nav_home">Home</a>
+  <a href="#about" data-i18n="nav_about">Sobre</a>
+  <a href="#games" data-i18n="nav_games">Jogos</a>
+  <a href="#media" data-i18n="nav_media">Trailers</a>
+  <a href="#team" data-i18n="nav_team">Equipe</a>
+  <a href="#contact" data-i18n="nav_contact">Contato</a>
+  <a href="https://discord.gg/4ACnyKR8HQ" target="_blank" rel="noopener noreferrer" class="mobile-cta">
+    <svg class="icon" aria-hidden="true"><use href="#i-discord"/></svg> Discord
+  </a>
+</nav>
+
+<main id="main" tabindex="-1">
 
   <!-- ================= HERO ================= -->
   <section id="home" class="hero">
@@ -993,8 +1049,7 @@ html.hero-off .ambient span,html.hero-off .hero-logo-wrap::before,html.hero-off 
           </article>
           <article class="media-card">
             <div class="media-frame is-loading">
-              <video class="loop-video" muted loop playsinline preload="metadata" data-alt="assets/anime-paradise-movement.mp4.mp4,assets/anime-paradise-movement.MP4,assets/anime-paradise-Movement.mp4,assets/anime-paradise-moviment.mp4,assets/anime-paradise-movimentacao.mp4,assets/anime-paradise-movement.mov,assets/anime-paradise-movement.m4v" disablepictureinpicture disableremoteplayback aria-label="Anime Paradise — movimentação">
-                <source src="https://cdn.discordapp.com/attachments/1253521147962593320/1563635997059580077/anime-paradise-movement.mp4.mp4?ex=6ade5900&amp;is=6add0780&amp;hm=549f5b8ef2e21014b497a4b2ada7d3c43278d290dbd6cdd78c0e04e8e37f028e&amp;#t=0.001" type="video/mp4">
+              <video class="loop-video" muted loop playsinline preload="metadata" disablepictureinpicture disableremoteplayback aria-label="Anime Paradise — movimentação">
                 <source src="assets/anime-paradise-movement.mp4#t=0.001" type="video/mp4">
                 <source src="assets/anime-paradise-movement.webm#t=0.001" type="video/webm">
               </video>
@@ -1196,16 +1251,15 @@ html.hero-off .ambient span,html.hero-off .hero-logo-wrap::before,html.hero-off 
 
 <!-- ================= CONFIGURAÇÃO RÁPIDA =================
      formEndpoint: mensagens do formulário chegam por e-mail via FormSubmit.
-     E-mail de destino: eosein00@gmail.com
      No primeiro envio o FormSubmit manda um e-mail de ativação para o endereço do dono
      (olhe também o SPAM): clique em "Activate Form". Sem isso TODO envio falha.
-     Depois de ativar, o FormSubmit mostra um código aleatório; você pode trocar o e-mail
-     no endereço por esse código (https://formsubmit.co/ajax/CODIGO) para não expor o e-mail no código.
+     Depois de ativar, troque o e-mail no endereço pelo código aleatório que o FormSubmit mostra
+     (https://formsubmit.co/ajax/CODIGO) para não expor o e-mail no código.
      liveStatsEndpoint: URL de um Worker (opcional). Vazio = usa RoProxy.
 -->
 <script>
 window.NEOX_CONFIG = Object.freeze({
-  formEndpoint: 'https://formsubmit.co/ajax/eosein00@gmail.com',
+  formEndpoint: 'https://formsubmit.co/ajax/oosein00@gmail.com',
   liveStatsEndpoint: ''
 });
 </script>
@@ -1866,7 +1920,7 @@ window.NEOX_CONFIG = Object.freeze({
     clearTimeout(video._wd);
     const frame = video.closest('.media-frame');
     if (!frame) return;
-    console.warn('[NeoX] Vídeo não carregou (arquivo ausente, nome diferente, codec não suportado, link expirado ou muito pesado):', video.currentSrc || video.getAttribute('src') || (video.querySelector('source') || {}).src || '');
+    console.warn('[NeoX] Vídeo não carregou (arquivo ausente, nome diferente, codec não suportado ou muito pesado):', video.currentSrc || video.getAttribute('src') || (video.querySelector('source') || {}).src || '');
     try { video.pause(); } catch (e) { /* ok */ }
     const src = video.dataset.fallbackImg;
     if (src) {
@@ -1882,7 +1936,7 @@ window.NEOX_CONFIG = Object.freeze({
       frame.appendChild(img);
     } else showMediaPlaceholder(video, 'media_error', true);
   }
-  // Se as fontes <source> falharem, tenta nomes alternativos antes de desistir.
+  // Se as fontes <source> falharem, tenta nomes alternativos (data-alt) antes de desistir.
   function tryAltSource(video) {
     if (video.dataset.missing) return;
     if (!video._alt) video._alt = (video.dataset.alt || '').split(',').map((s) => s.trim()).filter(Boolean);
@@ -2692,6 +2746,7 @@ window.NEOX_CONFIG = Object.freeze({
     if (view) { location.hash = href; return; }     // o roteador fecha a página e rola até a seção
     try { window.history.replaceState(null, '', href); } catch (e) { /* file:// */ }
     animateTo(target);
+    if (target.id === 'main') target.focus({ preventScroll: true });
   });
 
   // Card inteiro do jogo é clicável (fora dos links e botões).
@@ -2765,7 +2820,9 @@ window.NEOX_CONFIG = Object.freeze({
     const EMAIL_RE = /^[^\s@]{1,64}@[^\s@]{1,190}\.[^\s@]{2,}$/;
     const COOLDOWN_MS = 45000;      // intervalo mínimo entre envios do mesmo visitante
     const MIN_FILL_MS = 3000;       // ninguém preenche tudo em menos de 3 s: é robô
-    const openedAt = Date.now();
+    // O relógio só começa quando o visitante toca no formulário (e não quando a página abre).
+    let openedAt = 0;
+    contactForm.addEventListener('focusin', () => { if (!openedAt) openedAt = Date.now(); });
 
     if (!FORM_ENDPOINT) setFormDisabled();
     else if (formBtn) formBtn.disabled = false;
@@ -2804,7 +2861,7 @@ window.NEOX_CONFIG = Object.freeze({
       const honey = contactForm.elements._honey;
       if (honey && honey.value) return;
       // Formulário "preenchido" rápido demais: avisa o visitante em vez de falhar sem dizer nada.
-      if (Date.now() - openedAt < MIN_FILL_MS) { setStatus('wait', t.form_wait, 'is-error'); return; }
+      if (!openedAt || Date.now() - openedAt < MIN_FILL_MS) { setStatus('wait', t.form_wait, 'is-error'); return; }
 
       // Limite de envios por visitante.
       const lastSent = num(store.get('neox-form-last')) || 0;
@@ -2847,6 +2904,7 @@ window.NEOX_CONFIG = Object.freeze({
         store.set('neox-form-last', Date.now());
         setStatus('sent', t.sent, 'is-ok');
         contactForm.reset();
+        openedAt = 0;
       } else {
         const reason = String((res.data && res.data.message) || '');
         console.warn('[NeoX] Falha ao enviar formulário:', res.status, reason);
@@ -2891,6 +2949,51 @@ window.NEOX_CONFIG = Object.freeze({
   /* ---------------- Idioma (botão) ---------------- */
   const langBtn = $('#lang-btn');
   if (langBtn) langBtn.addEventListener('click', () => applyLanguage(lang === 'pt' ? 'en' : 'pt'));
+
+  /* ---------------- Animações extras ---------------- */
+  (() => {
+    if (reduced()) return;
+
+    if (mqFine.matches) {
+      // Brilho que acompanha o mouse nos cards
+      $$('.panel').forEach((p) => {
+        p.addEventListener('pointermove', (e) => {
+          const r = p.getBoundingClientRect();
+          p.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+          p.style.setProperty('--my', (e.clientY - r.top) + 'px');
+          p.classList.add('is-spot');
+        }, { passive: true });
+        p.addEventListener('pointerleave', () => p.classList.remove('is-spot'));
+      });
+
+      // Botões levemente magnéticos
+      $$('.btn-primary, .btn-soft').forEach((b) => {
+        b.addEventListener('pointermove', (e) => {
+          if (b.disabled) return;
+          const r = b.getBoundingClientRect();
+          const dx = ((e.clientX - r.left) / r.width - 0.5) * 6;
+          const dy = ((e.clientY - r.top) / r.height - 0.5) * 4;
+          b.style.translate = `${dx.toFixed(1)}px ${dy.toFixed(1)}px`;
+        }, { passive: true });
+        b.addEventListener('pointerleave', () => { b.style.translate = ''; });
+      });
+    }
+
+    // Parallax leve no fundo do hero
+    const amb = $('.ambient');
+    if (amb) {
+      let t = false;
+      window.addEventListener('scroll', () => {
+        if (t) return;
+        t = true;
+        requestAnimationFrame(() => { t = false; amb.style.setProperty('--py', (-window.scrollY * 0.08).toFixed(1)); });
+      }, { passive: true });
+    }
+
+    // Ícone do menu gira ao abrir/fechar
+    const mb = $('#menu-btn');
+    if (mb) mb.addEventListener('click', () => { mb.classList.remove('is-spin'); void mb.offsetWidth; mb.classList.add('is-spin'); });
+  })();
 
   /* ---------------- Início ---------------- */
   applyLanguage(lang, false);
