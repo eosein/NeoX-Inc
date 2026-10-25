@@ -34,8 +34,6 @@
 <link rel="alternate" hreflang="pt-BR" href="https://eosein.github.io/NeoX-Inc/">
 <link rel="alternate" hreflang="x-default" href="https://eosein.github.io/NeoX-Inc/">
 
-<!-- Site publicado em https://eosein.github.io/NeoX-Inc/ (se trocar de domínio, troque nas tags canonical, og: e twitter: abaixo). -->
-<!-- OG: salve a imagem de pré-visualização do link em assets/og-cover.png (ideal 1200x630). O endereço PRECISA ser absoluto. -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="NeoX Studio">
 <meta property="og:url" content="https://eosein.github.io/NeoX-Inc/">
@@ -81,10 +79,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-/* =========================================================
-   NEOX STUDIO — preto (primária), ciano (secundária) e
-   rosa (terciária, só em detalhes pontuais).
-   ========================================================= */
+/* NEOX STUDIO — preto (primária), ciano (secundária) e rosa (terciária, só em detalhes pontuais). */
 :root{
   --bg:#020204; --bg-2:#07070b; --text:#f5f7fa; --muted:#a3a8b3; --muted-2:#727887;
   --accent:#6fdcec; --accent-2:#3bb8cc; --soft:#e9eef2; --pop:#ff4fa3; --live:#6fdcec;
@@ -553,7 +548,7 @@ html.hero-off .ambient span,html.hero-off .hero-logo-wrap::before,html.hero-off 
   .js .team-card.is-active:hover{ translate:0 -4px; }
 }
 
-/* ---------- Refinos de animação (sutis, em todo o site) ---------- */
+/* ---------- Refinos de animação ---------- */
 .field input,.field textarea{ transition:border-color .25s ease, box-shadow .3s ease, background-color .25s ease, transform .3s var(--ease); }
 @media (hover:hover){
   .field input:hover:not(:focus),.field textarea:hover:not(:focus){ border-color:rgba(255,255,255,.28); background:rgba(255,255,255,.04); }
@@ -577,20 +572,17 @@ html.hero-off .ambient span,html.hero-off .hero-logo-wrap::before,html.hero-off 
   .to-top.is-visible:hover{ transform:translateY(-3px); }
 }
 
-/* ---------- ANIMAÇÕES NOVAS (suaves) ---------- */
-/* Entrada do header */
+/* ---------- Animações novas (suaves) ---------- */
 .site-header{ animation:hdr-in .9s var(--ease) .1s backwards; }
 html.is-loading .site-header{ animation-play-state:paused; }
 @keyframes hdr-in{ from{ opacity:0; transform:translateY(-100%); } }
 
-/* Brilho que segue o mouse nos cards */
 .panel{ --mx:50%; --my:50%; --sp:0;
   background:
     radial-gradient(320px circle at var(--mx) var(--my), rgba(111,220,236,calc(var(--sp) * .09)), transparent 65%),
     linear-gradient(180deg,rgba(255,255,255,.035),rgba(255,255,255,.01)); }
 .panel.is-spot{ --sp:1; }
 
-/* Botões magnéticos + brilho suave no botão principal do hero */
 .btn{ transition:transform .3s var(--ease), translate .35s var(--ease), background-color .25s ease, color .25s ease, border-color .25s ease, box-shadow .3s ease; }
 .hero-cta .btn-primary{ animation:glow-soft 4.5s ease-in-out infinite; }
 @keyframes glow-soft{
@@ -598,13 +590,11 @@ html.is-loading .site-header{ animation-play-state:paused; }
   50%{ box-shadow:0 14px 40px -12px rgba(111,220,236,.45); }
 }
 
-/* Imagens saem do desfoque ao aparecer */
 .js .game-media img{ filter:blur(10px); scale:1.08; transition:filter 1.1s var(--ease), scale 1.3s var(--ease), transform .9s var(--ease); }
 .js .game-card.is-in .game-media img{ filter:none; scale:1; }
 .js .media-frame img{ filter:blur(8px); scale:1.05; transition:filter 1s var(--ease), scale 1.2s var(--ease), transform .9s var(--ease); }
 .js .stagger.is-in .media-frame img{ filter:none; scale:1; }
 
-/* Parallax leve, ícones flutuando e hover nas estatísticas */
 .ambient{ translate:0 calc(var(--py,0) * 1px); }
 .community-icon{ animation:float-t 7s ease-in-out infinite; }
 .community-card:nth-child(2) .community-icon{ animation-delay:-3s; }
@@ -612,11 +602,9 @@ html.is-loading .site-header{ animation-play-state:paused; }
 .stat-card{ transition:background-color .3s ease; }
 @media (hover:hover){ .stat-card:hover{ background:rgba(255,255,255,.025); } }
 
-/* Ícone do menu gira ao abrir/fechar */
 .icon-btn.is-spin .icon{ animation:spin-in .45s var(--ease); }
 @keyframes spin-in{ from{ transform:rotate(-90deg) scale(.6); opacity:0; } }
 
-/* Itens do perfil entram em sequência */
 .view-page.is-enter .dp-duties li,
 .view-page.is-enter .dp-person{ animation:fade-up .7s var(--ease) backwards; }
 .view-page.is-enter .dp-duties li:nth-child(1){ animation-delay:.45s; }
@@ -631,6 +619,68 @@ html.is-loading .site-header{ animation-play-state:paused; }
 .view-page.is-enter .dp-person:nth-child(6){ animation-delay:.75s; }
 .view-page.is-enter .dp-person:nth-child(7){ animation-delay:.8s; }
 .view-page.is-enter .dp-person:nth-child(8){ animation-delay:.85s; }
+
+/* ---------- NOVO: animações em todo o site ---------- */
+.main-nav .nav-link,.header-actions > *{ animation:fade-up .7s var(--ease) backwards; }
+.main-nav .nav-link:nth-child(1){ animation-delay:.30s } .main-nav .nav-link:nth-child(2){ animation-delay:.36s }
+.main-nav .nav-link:nth-child(3){ animation-delay:.42s } .main-nav .nav-link:nth-child(4){ animation-delay:.48s }
+.main-nav .nav-link:nth-child(5){ animation-delay:.54s } .main-nav .nav-link:nth-child(6){ animation-delay:.60s }
+.header-actions > :nth-child(1){ animation-delay:.55s } .header-actions > :nth-child(2){ animation-delay:.65s } .header-actions > :nth-child(3){ animation-delay:.7s }
+html.is-loading .main-nav .nav-link,html.is-loading .header-actions > *{ animation-play-state:paused; }
+.site-header::after{ content:""; position:absolute; left:0; right:0; bottom:-1px; height:1px; background:linear-gradient(90deg,transparent,var(--accent),var(--soft),transparent); background-size:200% 100%; animation:sweep 9s linear infinite; opacity:.5; pointer-events:none; }
+
+.section::before{ content:""; position:absolute; z-index:-1; width:440px; height:440px; top:8%; left:-140px; border-radius:50%; pointer-events:none; background:radial-gradient(circle,rgba(111,220,236,.055),transparent 70%); animation:drift 26s ease-in-out infinite alternate; }
+.section:nth-of-type(even)::before{ left:auto; right:-140px; top:30%; background:radial-gradient(circle,rgba(255,79,163,.04),transparent 70%); animation-duration:32s; }
+
+.media-group-head{ position:relative; border-bottom-color:transparent; }
+.media-group-head::after{ content:""; position:absolute; left:0; right:0; bottom:0; height:1px; background:linear-gradient(90deg,var(--line-2),var(--accent),var(--line)); transform:scaleX(0); transform-origin:left; transition:transform 1.2s var(--ease) .2s; }
+.media-group.is-in .media-group-head::after{ transform:scaleX(1); }
+.feature-grid{ position:relative; border-top-color:transparent; }
+.feature-grid::before{ content:""; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,var(--line-2),var(--accent),var(--line)); transform:scaleX(0); transform-origin:left; transition:transform 1.2s var(--ease) .3s; }
+.feature-grid.is-in::before{ transform:scaleX(1); }
+.contact-links{ border-top-color:transparent; }
+.contact-links::before{ content:""; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,var(--line-2),var(--accent),var(--line)); transform:scaleX(0); transform-origin:center; transition:transform 1.2s var(--ease) .2s; }
+.contact-links.is-in::before{ transform:scaleX(1); }
+
+@media (hover:hover){
+  .chip-link:hover .icon{ transform:rotate(-8deg) scale(1.15); }
+  .team-link:hover .icon{ transform:translate(2px,-2px); }
+  .brand:hover .brand-name{ letter-spacing:.17em; }
+  .stat-card:hover .stat-value{ transform:translateY(-2px); }
+  .game-card:hover .game-live-num{ transform:translateX(2px); }
+  .media-card:hover .media-caption h4{ transform:translateX(3px); }
+  .feature:hover{ transform:translateY(-2px); }
+  .community-card:hover{ background-color:rgba(255,255,255,.02); }
+}
+.chip-link .icon,.team-link .icon{ transition:transform .4s var(--ease); }
+.brand-name{ transition:letter-spacing .5s var(--ease); }
+.stat-value,.game-live-num,.media-caption h4,.feature{ transition:transform .4s var(--ease), color .3s ease; }
+.nav-link{ transition:color .25s ease, transform .3s var(--ease); }
+.nav-link:hover{ transform:translateY(-1px); }
+
+.js .team-card.is-active .team-avatar{ animation:avatar-glow 4.5s ease-in-out infinite; }
+@keyframes avatar-glow{ 0%,100%{ box-shadow:0 0 0 0 rgba(111,220,236,0); } 50%{ box-shadow:0 0 28px -6px rgba(111,220,236,.28); } }
+.btn-primary:not(.header-discord):not(:disabled){ background-image:linear-gradient(110deg,#f3f6f8 40%,#dff6fa 50%,#f3f6f8 60%); background-size:250% 100%; animation:btn-sheen 7s ease-in-out infinite; }
+@keyframes btn-sheen{ 0%,70%{ background-position:100% 0; } 100%{ background-position:-100% 0; } }
+.hero-cta .btn-primary{ animation:glow-soft 4.5s ease-in-out infinite, btn-sheen 7s ease-in-out infinite; }
+.hero h1 .grad{ display:inline-block; }
+
+.gp-backdrop img{ animation:kenburns 22s ease-in-out infinite alternate; }
+@keyframes kenburns{ from{ transform:scale(1.25) translate3d(0,0,0); } to{ transform:scale(1.38) translate3d(-2%,2%,0); } }
+.view-page.is-enter .gp-card{ animation:fade-up .8s var(--ease) backwards; }
+.view-page.is-enter .gp-stats .gp-card:nth-child(1){ animation-delay:.4s } .view-page.is-enter .gp-stats .gp-card:nth-child(2){ animation-delay:.48s }
+.view-page.is-enter .gp-stats .gp-card:nth-child(3){ animation-delay:.56s } .view-page.is-enter .gp-stats .gp-card:nth-child(4){ animation-delay:.64s }
+.view-page.is-enter .gp-stats .gp-card:nth-child(5){ animation-delay:.72s }
+.view-page.is-enter .gp-dl > div{ animation:fade-up .6s var(--ease) backwards; }
+.view-page.is-enter .gp-dl > div:nth-child(1){ animation-delay:.7s } .view-page.is-enter .gp-dl > div:nth-child(2){ animation-delay:.78s } .view-page.is-enter .gp-dl > div:nth-child(3){ animation-delay:.86s }
+.gp-bar span{ transition:width 1.4s var(--ease) .3s; }
+.gp-cover,.dp-portrait{ animation:float 8s ease-in-out infinite; }
+.view-page.is-enter .gp-cover,.view-page.is-enter .dp-portrait{ animation:fade-up .9s var(--ease) backwards, float 8s ease-in-out .9s infinite; }
+
+.to-top .icon{ animation:nudge 2.6s ease-in-out infinite; }
+@keyframes nudge{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-3px); } }
+.field label{ transition:color .25s ease, transform .3s var(--ease); }
+.field:focus-within label{ transform:translateX(3px); }
 
 /* ---------- Responsivo ---------- */
 @media (min-width:560px){
@@ -673,6 +723,8 @@ html.is-loading .site-header{ animation-play-state:paused; }
   #fx-canvas{ opacity:.3; }
   .card-tilt{ transform:translateY(var(--lift,0px)) !important; }
   .to-top{ right:14px; bottom:calc(14px + env(safe-area-inset-bottom,0px)); width:42px; height:42px; }
+  .section::before{ display:none; }
+  .gp-backdrop img{ animation:none; }
 }
 @media (max-width:420px){
   .container{ width:min(1180px,100% - 2rem); }
@@ -1253,13 +1305,11 @@ html.is-loading .site-header{ animation-play-state:paused; }
      formEndpoint: mensagens do formulário chegam por e-mail via FormSubmit.
      No primeiro envio o FormSubmit manda um e-mail de ativação para o endereço do dono
      (olhe também o SPAM): clique em "Activate Form". Sem isso TODO envio falha.
-     Depois de ativar, troque o e-mail no endereço pelo código aleatório que o FormSubmit mostra
-     (https://formsubmit.co/ajax/CODIGO) para não expor o e-mail no código.
      liveStatsEndpoint: URL de um Worker (opcional). Vazio = usa RoProxy.
 -->
 <script>
 window.NEOX_CONFIG = Object.freeze({
-  formEndpoint: 'https://formsubmit.co/ajax/oosein00@gmail.com',
+  formEndpoint: 'https://formsubmit.co/ajax/eosein00@gmail.com',
   liveStatsEndpoint: ''
 });
 </script>
@@ -1288,9 +1338,7 @@ window.NEOX_CONFIG = Object.freeze({
 </button>
 
 <script>
-/* =========================================================
-   NEOX STUDIO — app (inline)
-   ========================================================= */
+/* NEOX STUDIO — app (inline) */
 (() => {
   'use strict';
 
@@ -1320,12 +1368,10 @@ window.NEOX_CONFIG = Object.freeze({
     set(key, value) { try { localStorage.setItem(key, JSON.stringify(value)); } catch (e) { /* modo privado */ } }
   };
   const debounce = (fn, wait = 150) => { let t; return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), wait); }; };
-  // Só deixa passar endereços https (evita javascript:, data: etc. em links montados por script).
   const safeHttps = (u) => {
     try { const x = new URL(u, location.href); return x.protocol === 'https:' ? x.href : '#'; }
     catch (e) { return '#'; }
   };
-  // Remove caracteres de controle e limita o tamanho de texto digitado pelo visitante.
   const cleanText = (s, max) => String(s || '').replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g, '').trim().slice(0, max);
 
   /* ---------------- Equipe: dados e textos dos perfis ---------------- */
@@ -1589,7 +1635,7 @@ window.NEOX_CONFIG = Object.freeze({
   const locale = () => (lang === 'pt' ? 'pt-BR' : 'en-US');
 
   /* ---------------- Estado compartilhado ---------------- */
-  let view = null;          // null | { type:'game', key } | { type:'dev', index }
+  let view = null;
   let gameKey = null;
   let devIndex = -1;
   let savedScroll = 0;
@@ -1609,7 +1655,6 @@ window.NEOX_CONFIG = Object.freeze({
   const FIELDS = ['playing', 'visits', 'favorites', 'likes', 'dislikes'];
   const FALLBACK_LIKES = { ap: { likes: 169 }, cr: { likes: 1645 }, ff: { likes: 4565 } };
   const NEOX_CONFIG = window.NEOX_CONFIG || {};
-  // Só aceita os endereços esperados (se alguém alterar a config, não vira porta de entrada).
   const FORM_ENDPOINT = /^https:\/\/formsubmit\.co\/ajax\/[^\s]+$/.test(NEOX_CONFIG.formEndpoint || '') ? NEOX_CONFIG.formEndpoint : '';
   const LIVE_STATS_ENDPOINT = /^https:\/\//.test(NEOX_CONFIG.liveStatsEndpoint || '') ? NEOX_CONFIG.liveStatsEndpoint : '';
 
@@ -1839,7 +1884,6 @@ window.NEOX_CONFIG = Object.freeze({
     }
     function loop(now) {
       raf = requestAnimationFrame(loop);
-      // Desenha a ~30 quadros/s: visual igual e bem menos CPU/bateria.
       if (now - lastDraw < 33) return;
       lastDraw = now;
       const step = last ? Math.min(3, (now - last) / 16.67) : 1;
@@ -1862,9 +1906,23 @@ window.NEOX_CONFIG = Object.freeze({
     onMQ(mqReduce, () => { stop(); if (reduced()) ctx.clearRect(0, 0, w, h); else start(); });
   })();
 
-  /* ---------------- Reveal ao rolar ---------------- */
+  /* ---------------- Reveal ao rolar (inclui os elementos extras animados) ---------------- */
   (() => {
-    const targets = $$('[data-reveal], [data-stagger]');
+    // Marca mais elementos para entrarem suavemente (além dos que já têm data-reveal/data-stagger).
+    ['#main .section-head .eyebrow', '#main .about-copy > p', '#main .about-panel h3', '#main .about-panel p',
+     '#main .contact-head p', '#main .team-controls', '#main .team-progress', '#main .team-status', '#main .form-note',
+     '#main .game-sub:not(.game-body .game-sub)', 'footer .footer-copy'].forEach((sel, n) => {
+      $$(sel).forEach((el, i) => {
+        if (el.closest('[data-reveal]') && !el.matches('.team-controls, .team-progress, .team-status')) return;
+        if (el.closest('.team-wrap') && !el.matches('.team-controls, .team-progress, .team-status')) return;
+        el.setAttribute('data-reveal', ''); el.style.setProperty('--d', ((i % 4) * 60) + 'ms');
+      });
+    });
+    ['.about-tags', '.contact-links', '.footer-links', '.hero-cta'].forEach((sel) => {
+      $$(sel).forEach((el) => { if (!el.closest('.hero') && !el.hasAttribute('data-stagger')) { el.classList.add('stagger'); el.setAttribute('data-stagger', ''); } });
+    });
+
+    const targets = $$('[data-reveal], [data-stagger], .media-group, .feature-grid');
     const show = (el) => el.classList.add('is-in');
     if (!targets.length) return;
     if (reduced() || !('IntersectionObserver' in window)) { targets.forEach(show); return; }
@@ -1872,8 +1930,17 @@ window.NEOX_CONFIG = Object.freeze({
       entries.forEach((entry) => { if (entry.isIntersecting) { show(entry.target); io.unobserve(entry.target); } });
     }, { threshold: 0.08, rootMargin: '0px 0px -6% 0px' });
     targets.forEach((el) => io.observe(el));
-    // Rede de segurança: nada fica invisível para sempre.
-    setTimeout(() => targets.forEach(show), 4500);
+    setTimeout(() => targets.forEach(show), 5000);
+
+    // Títulos de seção: de desfocado para nítido ao entrar
+    $$('.section-title').forEach((t) => {
+      t.style.transition = 'filter .9s cubic-bezier(.16,1,.3,1), letter-spacing 1.1s cubic-bezier(.16,1,.3,1)';
+      t.style.filter = 'blur(6px)'; t.style.letterSpacing = '-.01em';
+      const clear = () => { t.style.filter = 'none'; t.style.letterSpacing = ''; };
+      const o = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { clear(); o.disconnect(); } }), { threshold: 0.3 });
+      o.observe(t);
+      setTimeout(clear, 6500);
+    });
   })();
 
   /* ---------------- Imagens: aquece as "preguiçosas" depois do carregamento ---------------- */
@@ -1932,11 +1999,10 @@ window.NEOX_CONFIG = Object.freeze({
       img.alt = '';
       img.loading = 'lazy';
       if (video.dataset.fallbacks) img.dataset.fallbacks = video.dataset.fallbacks;
-      img.src = src;                       // se falhar, o handler global tenta os fallbacks e, por fim, mostra o aviso
+      img.src = src;
       frame.appendChild(img);
     } else showMediaPlaceholder(video, 'media_error', true);
   }
-  // Se as fontes <source> falharem, tenta nomes alternativos (data-alt) antes de desistir.
   function tryAltSource(video) {
     if (video.dataset.missing) return;
     if (!video._alt) video._alt = (video.dataset.alt || '').split(',').map((s) => s.trim()).filter(Boolean);
@@ -1960,7 +2026,6 @@ window.NEOX_CONFIG = Object.freeze({
     const play = (v) => { if (v.dataset.missing) return; prep(v); const p = v.play(); if (p && p.catch) p.catch(() => {}); };
     const ready = (v) => { clearTimeout(v._wd); const f = v.closest('.media-frame'); if (f) f.classList.remove('is-loading'); v.classList.add('is-ready'); };
     const inView = (v) => { const r = v.getBoundingClientRect(); return r.bottom > 0 && r.top < window.innerHeight; };
-    // Se o vídeo não ficar pronto em 20 s (arquivo pesado, ausente ou com codec ruim), mostra aviso com "tentar de novo".
     const arm = (v) => { clearTimeout(v._wd); v._wd = setTimeout(() => { if (!v.classList.contains('is-ready') && !v.dataset.missing) showVideoFallback(v); }, 20000); };
     const wake = (v) => {
       if (v._woke || v.dataset.missing) return;
@@ -2001,7 +2066,6 @@ window.NEOX_CONFIG = Object.freeze({
       };
     });
 
-    // Toque/Enter no aviso de erro tenta carregar o vídeo de novo.
     const retryFrom = (target) => {
       const ph = target.closest && target.closest('.media-placeholder.is-retry');
       if (!ph) return;
@@ -2013,7 +2077,6 @@ window.NEOX_CONFIG = Object.freeze({
     document.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { retryFrom(e.target); } });
 
     if ('IntersectionObserver' in window) {
-      // Começa a baixar com bastante antecedência (1500px antes de aparecer) para não ter delay.
       const loader = new IntersectionObserver((entries) => {
         entries.forEach((en) => { if (en.isIntersecting) { wake(en.target); loader.unobserve(en.target); } });
       }, { rootMargin: '1500px 0px' });
@@ -2077,7 +2140,7 @@ window.NEOX_CONFIG = Object.freeze({
   const GAMES_API = 'https://games.roblox.com/v1/games?universeIds=';
   const proxied = (url) => ALLORIGINS + encodeURIComponent(url);
   const votesTimer = { at: 0 };
-  const POLL_MS = 5000, POLL_GAME_MS = 3000;   // intervalo entre atualizações (página inicial / página do jogo)
+  const POLL_MS = 5000, POLL_GAME_MS = 3000;
   let statsTimer = null, refreshing = false, liveFails = 0, lastSave = 0, votesBusy = false;
 
   async function fetchJSON(url, timeout = 9000) {
@@ -2144,7 +2207,6 @@ window.NEOX_CONFIG = Object.freeze({
     if (!Object.keys(games).length) throw new Error('sem dados do Roblox');
     return { games, updatedAt: new Date().toISOString() };
   }
-  // Curtidas rodam em paralelo e nunca seguram a atualização dos jogadores.
   async function refreshVotes() {
     if (votesBusy || LIVE_STATS_ENDPOINT) return;
     votesBusy = true;
@@ -2161,7 +2223,7 @@ window.NEOX_CONFIG = Object.freeze({
       votesTimer.at = Date.now();
       if (Object.keys(games).length && applySnapshot({ games, updatedAt: new Date().toISOString() }, 'live', false)) renderStats();
     } catch (err) {
-      votesTimer.at = Date.now() - 45000;   // tenta de novo em ~15 s
+      votesTimer.at = Date.now() - 45000;
     } finally { votesBusy = false; }
   }
 
@@ -2197,7 +2259,7 @@ window.NEOX_CONFIG = Object.freeze({
   function renderStatsNote() { const n = $('#roblox-stats-updated'); if (n) n.textContent = noteText(); }
 
   async function refreshStats() {
-    if (refreshing) return;          // nunca dois ciclos ao mesmo tempo
+    if (refreshing) return;
     refreshing = true;
     clearTimeout(statsTimer);
     try {
@@ -2366,7 +2428,6 @@ window.NEOX_CONFIG = Object.freeze({
     if (prevBtn) prevBtn.addEventListener('click', () => step(-1));
     if (nextBtn) nextBtn.addEventListener('click', () => step(1));
 
-    // Arrastar: só "captura" depois de mover de verdade, assim os cliques nos links continuam funcionando.
     viewport.addEventListener('pointerdown', (e) => {
       if (locked) return;
       if (e.pointerType === 'mouse' && e.button !== 0) return;
@@ -2403,7 +2464,6 @@ window.NEOX_CONFIG = Object.freeze({
     window.addEventListener('pointerup', endDrag);
     window.addEventListener('pointercancel', endDrag);
 
-    // Clique: depois de arrastar não abre nada; em card fora do centro, só centraliza; no card ativo, abre o perfil.
     viewport.addEventListener('click', (e) => {
       if (suppressClick) { e.preventDefault(); e.stopPropagation(); return; }
       const card = e.target.closest('.team-card');
@@ -2563,7 +2623,7 @@ window.NEOX_CONFIG = Object.freeze({
     root.classList.remove('in-view');
     delete root.dataset.view;
     document.title = dict().title;
-    window.dispatchEvent(new Event('resize'));      // reposiciona carrossel e faixa
+    window.dispatchEvent(new Event('resize'));
     window.dispatchEvent(new Event('neox:view'));
   }
   function focusHeading(id) {
@@ -2723,7 +2783,6 @@ window.NEOX_CONFIG = Object.freeze({
     if (wasView) {
       if (target) jumpTo(target); else window.scrollTo(0, savedScroll);
     } else if (initial && target && r.id !== 'home') {
-      // Abrir o site já em uma seção (ex.: /#contact): espera o layout assentar e vai até lá.
       const go = () => jumpTo(target);
       if (document.readyState === 'complete') setTimeout(go, 60);
       else window.addEventListener('load', () => setTimeout(go, 60), { once: true });
@@ -2733,7 +2792,6 @@ window.NEOX_CONFIG = Object.freeze({
   }
   window.addEventListener('hashchange', () => syncRoute(false));
 
-  // Cliques em âncoras. Rotas (#/...) seguem a navegação nativa do navegador (hashchange).
   document.addEventListener('click', (event) => {
     if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
     const link = event.target.closest('a[href^="#"]');
@@ -2743,13 +2801,12 @@ window.NEOX_CONFIG = Object.freeze({
     const target = document.getElementById(href.slice(1));
     if (!target) return;
     event.preventDefault();
-    if (view) { location.hash = href; return; }     // o roteador fecha a página e rola até a seção
+    if (view) { location.hash = href; return; }
     try { window.history.replaceState(null, '', href); } catch (e) { /* file:// */ }
     animateTo(target);
     if (target.id === 'main') target.focus({ preventScroll: true });
   });
 
-  // Card inteiro do jogo é clicável (fora dos links e botões).
   $$('.game-card[data-page]').forEach((card) => {
     card.addEventListener('click', (e) => {
       if (e.target.closest('a,button')) return;
@@ -2818,9 +2875,8 @@ window.NEOX_CONFIG = Object.freeze({
   if (contactForm) {
     const fName = $('#f-name'), fEmail = $('#f-email'), fRoblox = $('#f-roblox'), fMsg = $('#f-msg');
     const EMAIL_RE = /^[^\s@]{1,64}@[^\s@]{1,190}\.[^\s@]{2,}$/;
-    const COOLDOWN_MS = 45000;      // intervalo mínimo entre envios do mesmo visitante
-    const MIN_FILL_MS = 3000;       // ninguém preenche tudo em menos de 3 s: é robô
-    // O relógio só começa quando o visitante toca no formulário (e não quando a página abre).
+    const COOLDOWN_MS = 45000;
+    const MIN_FILL_MS = 3000;
     let openedAt = 0;
     contactForm.addEventListener('focusin', () => { if (!openedAt) openedAt = Date.now(); });
 
@@ -2857,13 +2913,10 @@ window.NEOX_CONFIG = Object.freeze({
       if (!FORM_ENDPOINT) { setFormDisabled(); return; }
       const t = dict();
 
-      // Anti-robô: campo escondido preenchido = robô (descarta em silêncio).
       const honey = contactForm.elements._honey;
       if (honey && honey.value) return;
-      // Formulário "preenchido" rápido demais: avisa o visitante em vez de falhar sem dizer nada.
       if (!openedAt || Date.now() - openedAt < MIN_FILL_MS) { setStatus('wait', t.form_wait, 'is-error'); return; }
 
-      // Limite de envios por visitante.
       const lastSent = num(store.get('neox-form-last')) || 0;
       if (Date.now() - lastSent < COOLDOWN_MS) { setStatus('wait', t.form_wait, 'is-error'); return; }
 
@@ -2891,7 +2944,6 @@ window.NEOX_CONFIG = Object.freeze({
       try { res = await postTo(JSON.stringify(payload), { 'Content-Type': 'application/json', Accept: 'application/json' }); }
       catch (err) { res = { ok: false, data: { message: String((err && err.message) || err) }, status: 0 }; }
 
-      // Segunda tentativa em outro formato (alguns navegadores/redes barram o JSON).
       if (!res.ok && !/activat/i.test(String((res.data && res.data.message) || ''))) {
         try {
           const fd = new FormData();
@@ -2955,7 +3007,6 @@ window.NEOX_CONFIG = Object.freeze({
     if (reduced()) return;
 
     if (mqFine.matches) {
-      // Brilho que acompanha o mouse nos cards
       $$('.panel').forEach((p) => {
         p.addEventListener('pointermove', (e) => {
           const r = p.getBoundingClientRect();
@@ -2966,7 +3017,6 @@ window.NEOX_CONFIG = Object.freeze({
         p.addEventListener('pointerleave', () => p.classList.remove('is-spot'));
       });
 
-      // Botões levemente magnéticos
       $$('.btn-primary, .btn-soft').forEach((b) => {
         b.addEventListener('pointermove', (e) => {
           if (b.disabled) return;
@@ -2979,7 +3029,6 @@ window.NEOX_CONFIG = Object.freeze({
       });
     }
 
-    // Parallax leve no fundo do hero
     const amb = $('.ambient');
     if (amb) {
       let t = false;
@@ -2990,7 +3039,6 @@ window.NEOX_CONFIG = Object.freeze({
       }, { passive: true });
     }
 
-    // Ícone do menu gira ao abrir/fechar
     const mb = $('#menu-btn');
     if (mb) mb.addEventListener('click', () => { mb.classList.remove('is-spin'); void mb.offsetWidth; mb.classList.add('is-spin'); });
   })();
