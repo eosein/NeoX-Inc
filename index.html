@@ -1089,7 +1089,6 @@ html.hero-off .hero-art img{ animation-play-state:paused; }
           <div class="about-tags">
             <span data-i18n="tech_ui">UI Design</span>
             <span>Luau</span>
-            <span data-i18n="tech_anim">Animação 3D</span>
             <span data-i18n="tech_model">Modelagem</span>
           </div>
         </aside>
@@ -1181,7 +1180,7 @@ html.hero-off .hero-art img{ animation-play-state:paused; }
               <span class="game-live-num" data-i18n="soon">Em breve</span>
             </div>
             <p class="game-sub" data-i18n="soon_note">A gente conta o progresso no Discord.</p>
-            <p class="game-desc" data-i18n="game_2_desc">Arena, combos e adrenalina. O próximo grande projeto da NeoX.</p>
+            <p class="game-desc" data-i18n="game_2_desc">Simulador de clique de anime. Clique, fique mais forte e evolua sem parar.</p>
           </div>
           <div class="game-actions">
             <a href="https://www.roblox.com/pt/games/111173250236559/Anime-Crash" target="_blank" rel="noopener noreferrer" class="btn btn-soft">
@@ -1284,7 +1283,7 @@ html.hero-off .hero-art img{ animation-play-state:paused; }
           <article class="media-card">
             <div class="media-frame is-loading">
               <video class="loop-video" muted loop playsinline preload="metadata" disablepictureinpicture disableremoteplayback aria-label="Anime Paradise — movimentação">
-                <source src="https://cdn.discordapp.com/attachments/1253521147962593320/1564066517430312960/Roblox_24mb.mp4?ex=6adfe9f4&amp;is=6ade9874&amp;hm=f77eb0e2f4b5d0f1a7a7e1c9d6c3f7b5e9a1d4c8b2f6a0e3d7c1b5f9a2e6d4c8&amp;#t=0.001" type="video/mp4">
+                <source src="https://cdn.discordapp.com/attachments/1253521147962593320/1564796863423451297/Roblox_24mb.mp4?ex=6ae29224&amp;is=6ae140a4&amp;hm=c48eef16eb9ebdb110b0a7a4c70a84a13afa9b280470bd6906436768f5eeca59&amp;#t=0.001" type="video/mp4">
                 <source src="assets/anime-paradise-movement.mp4#t=0.001" type="video/mp4">
               </video>
             </div>
@@ -1738,7 +1737,7 @@ window.NEOX_CONFIG = Object.freeze({
       feat_3_title: 'Sempre tem novidade', feat_3_desc: 'Atualizações frequentes, sem promessa vazia.',
       about_box_title: 'Feito nos detalhes',
       about_box_desc: 'UI, Luau, animação e modelagem: cada parte passa pela mão de alguém da equipe. O resultado parece simples — porque o trabalho pesado fica nos bastidores.',
-      tech_ui: 'UI Design', tech_anim: 'Animação 3D', tech_model: 'Modelagem',
+      tech_ui: 'UI Design', tech_model: 'Modelagem',
       community_tag: 'Onde a gente se encontra', community_title: 'Entra na conversa',
       group_title: 'Grupo Neo X Inc', group_desc: 'Novidades, testes e avisos direto no Roblox.',
       dc_title: 'Discord da Comunidade', dc_desc: 'Bastidores, dúvidas e aquele papo de comunidade.',
@@ -1746,7 +1745,7 @@ window.NEOX_CONFIG = Object.freeze({
       games_subtitle: 'Cada um tem um clima diferente. Todos feitos pela NeoX.',
       playing_now: 'jogando agora', visits: 'visitas', soon: 'Em breve', soon_note: 'A gente conta o progresso no Discord.',
       game_1_desc: 'Entre em mundos de anime, enfrente chefes e monte seu time de campeões.',
-      game_2_desc: 'Arena, combos e adrenalina. O próximo grande projeto da NeoX.',
+      game_2_desc: 'Simulador de clique de anime. Clique, fique mais forte e evolua sem parar.',
       game_3_desc: 'Sobrevivência tática, loot e decisões rápidas. Dropa, equipa e vai.',
       btn_play: 'Jogar Agora', btn_preview: 'Ver Projeto', game_discord: 'Game Discord', discord_soon: 'Discord Coming Soon',
       media_tag: 'Por dentro dos jogos', media_title: 'Veja em movimento',
@@ -1806,7 +1805,7 @@ window.NEOX_CONFIG = Object.freeze({
       feat_3_title: 'Always something new', feat_3_desc: 'Frequent updates, no empty promises.',
       about_box_title: 'Made in the details',
       about_box_desc: 'UI, Luau, animation and modeling: every part goes through someone on the team. The result looks simple — because the heavy lifting stays backstage.',
-      tech_ui: 'UI Design', tech_anim: '3D Animation', tech_model: 'Modeling',
+      tech_ui: 'UI Design', tech_model: 'Modeling',
       community_tag: 'Where we meet', community_title: 'Join the conversation',
       group_title: 'Neo X Inc Group', group_desc: 'News, tests and updates straight on Roblox.',
       dc_title: 'Community Discord', dc_desc: 'Behind the scenes, questions and community talk.',
@@ -1814,7 +1813,7 @@ window.NEOX_CONFIG = Object.freeze({
       games_subtitle: 'Each one has a different vibe. All made by NeoX.',
       playing_now: 'playing', visits: 'visits', soon: 'Coming soon', soon_note: 'We share progress on Discord.',
       game_1_desc: 'Step into anime worlds, take on bosses and build your team of champions.',
-      game_2_desc: 'Arena, combos and adrenaline. The next big project from NeoX.',
+      game_2_desc: 'Anime clicker simulator. Click, get stronger and keep evolving.',
       game_3_desc: 'Tactical survival, loot and quick calls. Drop in, gear up and go.',
       btn_play: 'Play Now', btn_preview: 'View Project', game_discord: 'Game Discord', discord_soon: 'Discord Coming Soon',
       media_tag: 'Inside the games', media_title: 'See it in motion',
@@ -2248,7 +2247,7 @@ window.NEOX_CONFIG = Object.freeze({
     clearTimeout(video._wd);
     const frame = video.closest('.media-frame');
     if (!frame) return;
-    console.warn('[NeoX] Vídeo não carregou (arquivo ausente, nome diferente, codec não suportado ou muito pesado):', video.currentSrc || video.getAttribute('src') || (video.querySelector('source') || {}).src || '');
+    console.warn('[NeoX] Vídeo não carregou (arquivo ausente, nome diferente, codec não suportado, link expirado ou muito pesado):', video.currentSrc || video.getAttribute('src') || (video.querySelector('source') || {}).src || '');
     try { video.pause(); } catch (e) { /* ok */ }
     const src = video.dataset.fallbackImg;
     if (src) {
@@ -2287,7 +2286,8 @@ window.NEOX_CONFIG = Object.freeze({
     const play = (v) => { if (v.dataset.missing) return; prep(v); const p = v.play(); if (p && p.catch) p.catch(() => {}); };
     const ready = (v) => { clearTimeout(v._wd); const f = v.closest('.media-frame'); if (f) f.classList.remove('is-loading'); v.classList.add('is-ready'); };
     const inView = (v) => { const r = v.getBoundingClientRect(); return r.bottom > 0 && r.top < window.innerHeight; };
-    const arm = (v) => { clearTimeout(v._wd); v._wd = setTimeout(() => { if (!v.classList.contains('is-ready') && !v.dataset.missing) showVideoFallback(v); }, 20000); };
+    /* 45s de paciência: vídeos grandes (ex.: 24 MB) em conexão lenta não devem cair em "indisponível" cedo demais. */
+    const arm = (v) => { clearTimeout(v._wd); v._wd = setTimeout(() => { if (!v.classList.contains('is-ready') && !v.dataset.missing) showVideoFallback(v); }, 45000); };
     const wake = (v) => {
       if (v._woke || v.dataset.missing) return;
       v._woke = true;
