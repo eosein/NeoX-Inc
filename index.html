@@ -893,6 +893,7 @@ img,video{-webkit-user-drag:none;user-drag:none}
 .btn-primary:not(.header-discord):not(:disabled),.hero-cta .btn-primary,.header-discord{ animation:none; }
 @media (hover:hover){ .game-card:hover::after{ animation:ang-spin 3.6s linear infinite; } }
 .hero::before{ display:none; }
+#about .community{ margin-top:0; }
 /* Faixas infinitas: só CSS (roda fora da thread principal) */
 .marquee-track{ animation:mq var(--md,40s) linear infinite; }
 .marquee[data-dir="1"] .marquee-track{ animation-direction:reverse; }
@@ -1092,40 +1093,6 @@ img,video{-webkit-user-drag:none;user-drag:none}
   <!-- ================= SOBRE ================= -->
   <section id="about" class="section">
     <div class="container">
-      <div class="about-grid">
-        <div class="about-copy panel card-hover" data-reveal="left">
-          <span class="eyebrow"><span class="dot"></span><span data-i18n="about_tag">Quem somos</span></span>
-          <h2 class="section-title"><span data-i18n="about_title">A gente leva a diversão a sério.</span></h2>
-          <p data-i18n="about_desc">A NeoX começou com uma ideia simples: fazer jogos que dão vontade de ficar.</p>
-
-          <div class="feature-grid stagger" data-stagger>
-            <div class="feature">
-              <h3 data-i18n="feat_1_title">Gameplay que responde</h3>
-              <p data-i18n="feat_1_desc">Controle preciso, sem travar.</p>
-            </div>
-            <div class="feature">
-              <h3 data-i18n="feat_2_title">Gente de verdade</h3>
-              <p data-i18n="feat_2_desc">A comunidade ajuda a decidir o próximo passo.</p>
-            </div>
-            <div class="feature">
-              <h3 data-i18n="feat_3_title">Sempre tem novidade</h3>
-              <p data-i18n="feat_3_desc">Atualizações frequentes, sem promessa vazia.</p>
-            </div>
-          </div>
-        </div>
-
-        <aside class="about-panel panel card-hover" data-reveal="right" style="--d:180ms">
-          <h3 data-i18n="about_box_title">Feito nos detalhes</h3>
-          <p data-i18n="about_box_desc">UI, Luau, animação e modelagem.</p>
-          <div class="about-tags">
-            <span data-i18n="tech_ui">UI/UX</span>
-            <span data-i18n="tech_anim">Animação</span>
-            <span data-i18n="tech_model">Modelagem 3D</span>
-            <span data-i18n="tech_vfx">VFX</span>
-          </div>
-        </aside>
-      </div>
-
       <div class="community" id="community">
         <div class="section-head" style="margin-bottom:20px" data-reveal>
           <span class="eyebrow"><span class="dot"></span><span data-i18n="community_tag">Onde a gente se encontra</span></span>
@@ -1761,7 +1728,7 @@ window.NEOX_CONFIG = Object.freeze({
   const i18n = {
     pt: {
       skip: 'Pular para o conteúdo', loading: 'Carregando…',
-      tech_anim: 'Animação', tech_vfx: 'VFX', meta_desc: 'A NeoX Studio faz jogos no Roblox: Anime Paradise, Anime Crash e FREE FIRE MAX.', logo_alt: 'Logo da NeoX Studio', brand_aria: 'NeoX Studio — início', nav_main: 'Principal', nav_mobile: 'Menu mobile', footer_nav: 'Links do rodapé', dev_pager: 'Navegar entre perfis', v_ac_1: 'Anime Crash — combate e movimentação', v_ap_1: 'Anime Paradise — cinemática e interface', v_ap_2: 'Anime Paradise — movimentação', alt_ac_2: 'Missões e recompensas de Anime Crash', alt_ac_3: 'Árvore de habilidades de Anime Crash', alt_ap_models: 'Modelos de Anime Paradise', team_role: 'carrossel', nav_home: 'Home', nav_about: 'Sobre', nav_games: 'Jogos', nav_media: 'Trailers', nav_team: 'Equipe', nav_contact: 'Contato',
+      tech_anim: 'Animação', tech_vfx: 'VFX', meta_desc: 'A NeoX Studio faz jogos no Roblox: Anime Paradise, Anime Crash e FREE FIRE MAX.', logo_alt: 'Logo da NeoX Studio', brand_aria: 'NeoX Studio — início', nav_main: 'Principal', nav_mobile: 'Menu mobile', footer_nav: 'Links do rodapé', dev_pager: 'Navegar entre perfis', v_ac_1: 'Anime Crash — combate e movimentação', v_ap_1: 'Anime Paradise — cinemática e interface', v_ap_2: 'Anime Paradise — movimentação', alt_ac_2: 'Missões e recompensas de Anime Crash', alt_ac_3: 'Árvore de habilidades de Anime Crash', alt_ap_models: 'Modelos de Anime Paradise', team_role: 'carrossel', nav_home: 'Home', nav_about: 'Comunidade', nav_games: 'Jogos', nav_media: 'Trailers', nav_team: 'Equipe', nav_contact: 'Contato',
       hero_tag: 'Estúdio de jogos no Roblox',
       hero_title_1: 'Fazemos jogos', hero_title_2: 'no Roblox.',
       rot_pre: 'Jogos cheios de', rot_words: ['anime', 'ação', 'aventura', 'sobrevivência', 'diversão'],
@@ -1817,7 +1784,7 @@ window.NEOX_CONFIG = Object.freeze({
       msg_short: 'Escreve um pouco mais (pelo menos 16 caracteres).',
       email_bad: 'Digite um e-mail válido.', name_short: 'Digite seu nome.',
       ph_name: 'Seu nome', ph_email: 'voce@email.com', ph_roblox: 'Seu usuário no Roblox', ph_msg: 'Conta o que você precisa...',
-      aria_menu_open: 'Abrir menu', aria_menu_close: 'Fechar menu', to_top: 'Voltar ao topo', scroll_hint: 'Ir para a seção Sobre',
+      aria_menu_open: 'Abrir menu', aria_menu_close: 'Fechar menu', to_top: 'Voltar ao topo', scroll_hint: 'Ir para a seção Comunidade',
       going_to: (name) => (name ? `Indo para ${name}…` : 'Indo…'), back_to_top: 'Voltando ao topo…',
       gp_more: 'Ver perfil e números ao vivo', gp_back: 'Todos os jogos', gp_live: 'Ao vivo', gp_tag: 'Perfil do jogo', gp_by: 'por',
       gp_play: 'Jogar no Roblox', gp_playing: 'Jogando agora', gp_peak: 'Pico desta visita', gp_visits: 'Visitas totais',
@@ -1829,7 +1796,7 @@ window.NEOX_CONFIG = Object.freeze({
     },
     en: {
       skip: 'Skip to content', loading: 'Loading…',
-      tech_anim: 'Animation', tech_vfx: 'VFX', meta_desc: 'NeoX Studio makes Roblox games: Anime Paradise, Anime Crash and FREE FIRE MAX.', logo_alt: 'NeoX Studio logo', brand_aria: 'NeoX Studio — home', nav_main: 'Main', nav_mobile: 'Mobile menu', footer_nav: 'Footer links', dev_pager: 'Browse profiles', v_ac_1: 'Anime Crash — combat and movement', v_ap_1: 'Anime Paradise — cutscene and interface', v_ap_2: 'Anime Paradise — movement', alt_ac_2: 'Anime Crash missions and rewards', alt_ac_3: 'Anime Crash skill tree', alt_ap_models: 'Anime Paradise models', team_role: 'carousel', nav_home: 'Home', nav_about: 'About', nav_games: 'Games', nav_media: 'Trailers', nav_team: 'Team', nav_contact: 'Contact',
+      tech_anim: 'Animation', tech_vfx: 'VFX', meta_desc: 'NeoX Studio makes Roblox games: Anime Paradise, Anime Crash and FREE FIRE MAX.', logo_alt: 'NeoX Studio logo', brand_aria: 'NeoX Studio — home', nav_main: 'Main', nav_mobile: 'Mobile menu', footer_nav: 'Footer links', dev_pager: 'Browse profiles', v_ac_1: 'Anime Crash — combat and movement', v_ap_1: 'Anime Paradise — cutscene and interface', v_ap_2: 'Anime Paradise — movement', alt_ac_2: 'Anime Crash missions and rewards', alt_ac_3: 'Anime Crash skill tree', alt_ap_models: 'Anime Paradise models', team_role: 'carousel', nav_home: 'Home', nav_about: 'Community', nav_games: 'Games', nav_media: 'Trailers', nav_team: 'Team', nav_contact: 'Contact',
       hero_tag: 'Roblox game studio',
       hero_title_1: 'We make games', hero_title_2: 'on Roblox.',
       rot_pre: 'Games full of', rot_words: ['anime', 'action', 'adventure', 'survival', 'fun'],
@@ -1885,7 +1852,7 @@ window.NEOX_CONFIG = Object.freeze({
       msg_short: 'Please write a bit more (at least 16 characters).',
       email_bad: 'Enter a valid email.', name_short: 'Enter your name.',
       ph_name: 'Your name', ph_email: 'you@email.com', ph_roblox: 'Your Roblox username', ph_msg: 'Tell us what you need...',
-      aria_menu_open: 'Open menu', aria_menu_close: 'Close menu', to_top: 'Back to top', scroll_hint: 'Go to the About section',
+      aria_menu_open: 'Open menu', aria_menu_close: 'Close menu', to_top: 'Back to top', scroll_hint: 'Go to the Community section',
       going_to: (name) => (name ? `Heading to ${name}…` : 'On the way…'), back_to_top: 'Back to top…',
       gp_more: 'View profile and live numbers', gp_back: 'All games', gp_live: 'Live', gp_tag: 'Game profile', gp_by: 'by',
       gp_play: 'Play on Roblox', gp_playing: 'Playing now', gp_peak: 'Peak this visit', gp_visits: 'Total visits',
@@ -2044,7 +2011,7 @@ window.NEOX_CONFIG = Object.freeze({
     if (formStatus) {
       const st = formStatus.dataset.state;
       if (st === 'sent') formStatus.textContent = t.sent;
-      else if (st === 'error') formStatus.textContent = t.send_error;
+      else if (st === 'error') formStatus.textContent = t.send_error + (formStatus.dataset.code ? ` (${formStatus.dataset.code})` : '');
       else if (st === 'activation') formStatus.textContent = t.send_activation;
       else if (st === 'wait') formStatus.textContent = t.form_wait;
       else if (st === 'cooldown') formStatus.textContent = t.form_cooldown(num(formStatus.dataset.min) || 30);
@@ -2952,13 +2919,7 @@ window.NEOX_CONFIG = Object.freeze({
     root.classList.remove('is-navigating', 'is-traveling');
     if (!keepToast) hideToast();
   }
-  function flash(section) {
-    if (!section) return;
-    clearArriving();
-    void section.offsetWidth;
-    section.classList.add('is-arriving');
-    section._arriveTimer = setTimeout(() => section.classList.remove('is-arriving'), 2400);
-  }
+  function flash() { /* sem efeito de chegada: a rolagem lenta continua, mas nada empilha nos cliques rápidos */ }
   function targetTop(target) {
     const offset = siteHeader && !siteHeader.classList.contains('is-hidden') ? siteHeader.offsetHeight + 18 : 24;
     return Math.max(0, Math.round(window.scrollY + target.getBoundingClientRect().top - offset));
@@ -3350,7 +3311,7 @@ window.NEOX_CONFIG = Object.freeze({
 
     async function postTo(body, headers) {
       const controller = new AbortController();
-      const timer = setTimeout(() => controller.abort(), 15000);
+      const timer = setTimeout(() => controller.abort(), 20000);
       try {
         const response = await fetch(FORM_ENDPOINT, {
           method: 'POST', headers, body, signal: controller.signal,
@@ -3397,14 +3358,15 @@ window.NEOX_CONFIG = Object.freeze({
 
       let res;
       try { res = await postTo(JSON.stringify(payload), { 'Content-Type': 'application/json', Accept: 'application/json' }); }
-      catch (err) { res = { ok: false, data: { message: String((err && err.message) || err) }, status: 0 }; }
+      catch (err) { res = { ok: false, data: { message: String((err && err.message) || err) }, status: 0, timeout: !!(err && err.name === 'AbortError') }; }
 
-      if (!res.ok && !/activat/i.test(String((res.data && res.data.message) || ''))) {
+      /* 2ª tentativa (formato simples) só se a 1ª falhou NA HORA. Se deu tempo esgotado, a mensagem pode ter chegado: não reenvia. */
+      if (!res.ok && !res.timeout && !/activat/i.test(String((res.data && res.data.message) || ''))) {
         try {
           const fd = new FormData();
           Object.entries(payload).forEach(([k, v]) => fd.append(k, v));
           res = await postTo(fd, { Accept: 'application/json' });
-        } catch (err) { res = { ok: false, data: { message: String((err && err.message) || err) }, status: 0 }; }
+        } catch (err) { res = { ok: false, data: { message: String((err && err.message) || err) }, status: 0, timeout: !!(err && err.name === 'AbortError') }; }
       }
 
       if (res.ok) {
@@ -3416,7 +3378,7 @@ window.NEOX_CONFIG = Object.freeze({
         const reason = String((res.data && res.data.message) || '');
         console.warn('[NeoX] Falha ao enviar formulário:', res.status, reason);
         if (/activat/i.test(reason)) setStatus('activation', t.send_activation, 'is-error');
-        else setStatus('error', t.send_error, 'is-error');
+        else { formStatus.dataset.code = res.timeout ? 'timeout' : (res.status || 'rede'); setStatus('error', `${t.send_error} (${formStatus.dataset.code})`, 'is-error'); }
       }
       formBtn.disabled = false;
     });
